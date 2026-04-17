@@ -37,7 +37,11 @@ def update
   end
 end
 
-
+# DELETE /users/:id
+def destroy
+  @user.destroy
+  redirect_to users_url, notice: "User was successfully destroyed."
+end
 
   def set_user
     @user=User.find(params[:id])
