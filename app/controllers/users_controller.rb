@@ -24,6 +24,20 @@ def create
 end
 
 
+# GET /users/:id/edit
+def edit  
+end
+
+# PATCH/PUT /users/:id
+def update
+  if @user.update(user_params)
+    redirect_to @user, notice: "User was successfully updated."
+  else
+    render :edit
+  end
+end
+
+
 
   def set_user
     @user=User.find(params[:id])
